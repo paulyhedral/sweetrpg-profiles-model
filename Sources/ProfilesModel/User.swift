@@ -54,8 +54,7 @@ final class User : Model {
 
     init(id : UUID? = nil, name : String, username : String, // password : String,
          thirdPartyAuth : String? = nil, thirdPartyAuthId : String? = nil,
-         email : String, profilePicture : String? = nil,
-         twitterURL : String? = nil) {
+         email : String) {
         self.id = id
         self.name = name
         self.username = username
@@ -71,13 +70,11 @@ final class User : Model {
         var id : UUID?
         var name : String
         var username : String
-        var twitterURL : String?
 
-        init(id : UUID?, name : String, username : String, twitterURL : String? = nil) {
+        init(id : UUID?, name : String, username : String) {
             self.id = id
             self.name = name
             self.username = username
-            self.twitterURL = twitterURL
         }
     }
 }
