@@ -7,41 +7,41 @@ import Fluent
 import Vapor
 
 
-final class User : Model {
-    static let schema = User.v20210601.schemaName
+public final class User : Model {
+    public static let schema = User.v20210620.schemaName
 
     @ID
-    var id : UUID?
+    public var id : UUID?
 
-    @Timestamp(key: User.v20210616.createdAt, on: .create)
-    var createdAt : Date?
+    @Timestamp(key: User.v20210620.createdAt, on: .create)
+    public var createdAt : Date?
 
-    @Timestamp(key: User.v20210616.updatedAt, on: .update)
-    var updatedAt : Date?
+    @Timestamp(key: User.v20210620.updatedAt, on: .update)
+    public var updatedAt : Date?
 
-    @Field(key: User.v20210601.name)
-    var name : String
+    @Field(key: User.v20210620.name)
+    public var name : String
 
-    @Field(key: User.v20210601.username)
-    var username : String
+    @Field(key: User.v20210620.username)
+    public var username : String
 
 //    @Field(key: "password")
 //    var password : String
 
-//    @Children(for: \.$user)
-//    var acronyms : [Acronym]
+   @Children(for: \.$profile)
+   public var profile : Profile
 
-    @Timestamp(key: User.v20210616.deletedAt, on: .delete)
-    var deletedAt : Date?
+    @Timestamp(key: User.v20210620.deletedAt, on: .delete)
+    public var deletedAt : Date?
 
-    @OptionalField(key: User.v20210601.thirdPartyAuth)
-    var thirdPartyAuth : String?
+    @OptionalField(key: User.v20210620.thirdPartyAuth)
+    public var thirdPartyAuth : String?
 
-    @OptionalField(key: User.v20210601.thirdPartyAuthId)
-    var thirdPartyAuthId : String?
+    @OptionalField(key: User.v20210620.thirdPartyAuthId)
+    public var thirdPartyAuthId : String?
 
-    @Field(key: User.v20210601.email)
-    var email : String
+    @Field(key: User.v20210620.email)
+    public var email : String
 
 //    @OptionalField(key: User.v20210601.profilePicture)
 //    var profilePicture : String?
@@ -49,10 +49,10 @@ final class User : Model {
 //    @OptionalField(key: User.v20210616.twitterURL)
 //    var twitterURL : String?
 
-    init() {
+    public init() {
     }
 
-    init(id : UUID? = nil, name : String, username : String, // password : String,
+    public init(id : UUID? = nil, name : String, username : String, // password : String,
          thirdPartyAuth : String? = nil, thirdPartyAuthId : String? = nil,
          email : String) {
         self.id = id
@@ -66,7 +66,7 @@ final class User : Model {
 //        self.twitterURL = twitterURL
     }
 
-    final class Public : Content {
+    public final class Public : Content {
         var id : UUID?
         var name : String
         var username : String
@@ -81,7 +81,7 @@ final class User : Model {
 
 extension User : Content {}
 
-extension User {
+public extension User {
     func convertToPublic() -> User.Public {
         User.Public(id: self.id, name: self.name, username: self.username)
     }
