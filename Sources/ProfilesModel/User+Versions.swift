@@ -6,18 +6,18 @@ import Fluent
 
 
 public extension User {
-    enum v20210620 {
+    public enum v20210620 {
         // schema
-        static let schemaName = "users"
+        public static let schemaName = "users"
 
         // properties
-        static let name = FieldKey(stringLiteral: "name")
-        static let username = FieldKey(stringLiteral: "username")
-        static let thirdPartyAuth = FieldKey(stringLiteral: "thirdPartyAuth")
-        static let thirdPartyAuthId = FieldKey(stringLiteral: "thirdPartyAuthId")
-        static let email = FieldKey(stringLiteral: "email")
-        static let deletedAt = FieldKey(stringLiteral: "deletedAt")
-        static let createdAt = FieldKey(stringLiteral: "createdAt")
-        static let updatedAt = FieldKey(stringLiteral: "updatedAt")
+        public static let name = FieldKey(stringLiteral: "name")
+        public static let username = FieldKey(stringLiteral: "username")
+        public static let thirdPartyAuth = FieldKey(stringLiteral: "thirdPartyAuth")
+        public static let thirdPartyAuthId = FieldKey(stringLiteral: "thirdPartyAuthId")
+        public static let email = FieldKey(stringLiteral: "email")
+        public static let deletedAt = FieldKey(stringLiteral: "deletedAt")
+        public static let createdAt = FieldKey(stringLiteral: "createdAt")
+        public static let updatedAt = FieldKey(stringLiteral: "updatedAt")
     }
 }

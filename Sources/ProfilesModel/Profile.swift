@@ -18,7 +18,7 @@ public final class Profile : Model {
     @Timestamp(key: Profile.v20210620.deletedAt, on: .delete)
     public var deletedAt : Date?
 
-    @Children(for: \.$profile)
+    @Parent(key: Profile.v20210620.userId)
     public var user : User
 
     public init() {

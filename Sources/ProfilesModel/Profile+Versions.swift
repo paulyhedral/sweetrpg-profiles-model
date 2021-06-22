@@ -6,13 +6,14 @@ import Fluent
 
 
 public extension Profile {
-    enum v20210620 {
+    public enum v20210620 {
         // schema
-        static let schemaName = "profiles"
+        public static let schemaName = "profiles"
 
         // properties
-        static let deletedAt = FieldKey(stringLiteral: "deletedAt")
-        static let createdAt = FieldKey(stringLiteral: "createdAt")
-        static let updatedAt = FieldKey(stringLiteral: "updatedAt")
+        public static let userId = FieldKey(stringLiteral: "userId")
+        public static let deletedAt = FieldKey(stringLiteral: "deletedAt")
+        public static let createdAt = FieldKey(stringLiteral: "createdAt")
+        public static let updatedAt = FieldKey(stringLiteral: "updatedAt")
     }
 }

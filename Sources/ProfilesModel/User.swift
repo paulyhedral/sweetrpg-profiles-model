@@ -28,8 +28,8 @@ public final class User : Model {
 //    @Field(key: "password")
 //    var password : String
 
-   @Children(for: \.$profile)
-   public var profile : Profile
+    @Children(for: \.$user)
+    public var profiles : [Profile]
 
     @Timestamp(key: User.v20210620.deletedAt, on: .delete)
     public var deletedAt : Date?
@@ -53,8 +53,8 @@ public final class User : Model {
     }
 
     public init(id : UUID? = nil, name : String, username : String, // password : String,
-         thirdPartyAuth : String? = nil, thirdPartyAuthId : String? = nil,
-         email : String) {
+                thirdPartyAuth : String? = nil, thirdPartyAuthId : String? = nil,
+                email : String) {
         self.id = id
         self.name = name
         self.username = username
